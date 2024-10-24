@@ -1,0 +1,35 @@
+[
+  {
+    "id": "1",
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "john@example.com",
+    "linkedin": "https://linkedin.com/in/johndoe",
+    "visas": "H1B",
+    "resume": "/resumes/john-doe.pdf",
+    "openInput": "Interested in software engineering roles",
+    "state": "REACHED_OUT"
+  },
+  {
+    "id": "2",
+    "firstName": "Jane",
+    "lastName": "Smith",
+    "email": "jane@example.com",
+    "linkedin": "https://linkedin.com/in/janesmith",
+    "visas": "L1",
+    "resume": "/resumes/jane-smith.pdf",
+    "openInput": "Looking for product management positions",
+    "state": "REACHED_OUT"
+  },
+  {
+    "id": "550fdeeb-74b5-44a8-b348-e361c12cb1d5",
+    "firstName": "Curt",
+    "lastName": "Hoyt",
+    "email": "curt.hoyt@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/curt-hoyt-893a896/",
+    "visas": "h1b",
+    "resume": "/resumes/placeholder.pdf",
+    "openInput": "fefeeeefefefefe",
+    "state": "REACHED_OUT"
+  }
+]
