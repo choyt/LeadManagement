@@ -1,1 +1,127 @@
-Nothing to see here.
+# Lead Management Application
+
+This is a Next.js-based lead management application that allows for the submission of lead information and provides an admin interface for managing these leads.
+
+## Table of Contents
+
+1. [Features](#features)
+2. [Technologies Used](#technologies-used)
+3. [Getting Started](#getting-started)
+4. [Running the Application](#running-the-application)
+5. [Design Choices](#design-choices)
+
+## Features
+
+- Public lead submission form
+- Admin interface for viewing and managing leads
+- Authentication for admin access
+- Ability to mark leads as "Reached Out"
+
+## Technologies Used
+
+- Next.js 13 (App Router)
+- React
+- TypeScript
+- Tailwind CSS
+- shadcn/ui components
+- NextAuth.js for authentication
+- File-based JSON storage (for demonstration purposes)
+
+## Getting Started
+
+1. Clone the repository:
+   ```
+   git clone https://github.com/yourusername/lead-management-app.git
+   cd lead-management-app
+   ```
+
+2. Install dependencies:
+   ```
+   npm install
+   ```
+
+3. Create a `.env.local` file in the root directory with the following content:
+   ```
+   NEXTAUTH_SECRET=your-secret-key
+   NEXTAUTH_URL=http://localhost:3000
+   NEXT_PUBLIC_API_URL=http://localhost:3000
+   ```
+   Replace `your-secret-key` with a secure random string.
+
+4. Create a `data` directory in the root of your project and add a `leads.json` file with initial data:
+   ```json
+   [
+     {
+       "id": "1",
+       "firstName": "John",
+       "lastName": "Doe",
+       "email": "john@example.com",
+       "linkedin": "https://linkedin.com/in/johndoe",
+       "visas": "H1B",
+       "resume": "/resumes/john-doe.pdf",
+       "openInput": "Interested in software engineering roles",
+       "state": "PENDING"
+     }
+   ]
+   ```
+
+## Running the Application
+
+1. Start the development server:
+   ```
+   npm run dev
+   ```
+
+2. Open your browser and navigate to `http://localhost:3000`
+
+3. To access the admin interface:
+   - Go to `http://localhost:3000/auth/signin`
+   - Use the following credentials:
+     - Username: admin
+     - Password: password
+
+## Design Choices
+
+1. **Next.js with App Router**: 
+   - Chosen for its server-side rendering capabilities, which improve initial load times and SEO.
+   - The new App Router provides an intuitive file-based routing system and built-in support for layouts.
+
+2. **TypeScript**: 
+   - Used for its strong typing system, which helps catch errors early in the development process and improves code maintainability.
+
+3. **Tailwind CSS and shadcn/ui**: 
+   - Tailwind CSS provides a utility-first approach to styling, allowing for rapid UI development.
+   - shadcn/ui offers pre-built, customizable components that integrate well with Tailwind, speeding up development while maintaining a consistent design.
+
+4. **Server Components**: 
+   - Utilized for improved performance and reduced client-side JavaScript.
+   - The admin leads page uses a server component to fetch initial data, reducing the load on the client.
+
+5. **Client Components**: 
+   - Used for interactive elements like forms and the leads list, where state management and user interactions are required.
+
+6. **NextAuth.js**: 
+   - Chosen for its easy integration with Next.js and flexible authentication options.
+   - Implemented a simple credentials provider for demonstration purposes, but can be easily extended to include other authentication methods.
+
+7. **File-based JSON Storage**: 
+   - Used for simplicity in this demonstration app.
+   - In a production environment, this would be replaced with a proper database system.
+
+8. **API Routes**: 
+   - Implemented for lead submission and management, providing a clean separation between the frontend and backend logic.
+
+9. **Form Validation**: 
+   - Implemented using react-hook-form and zod for robust client-side validation, improving user experience and data integrity.
+
+10. **Responsive Design**: 
+    - Ensured the application is usable on various device sizes using Tailwind's responsive utility classes.
+
+11. **Error Handling and Toasts**: 
+    - Implemented comprehensive error handling and user feedback using toast notifications to improve the user experience.
+
+12. **Code Organization**: 
+    - Separated concerns by creating distinct components for the lead form and leads list.
+    - Utilized a lib folder for shared utilities and data access functions.
+
+These design choices were made to create a scalable, maintainable, and user-friendly application while adhering to modern web development best practices.
